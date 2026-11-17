@@ -1,13 +1,13 @@
 const Contact = () => {
   return (
-    <section id="contact" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="contact" className="py-24 2xl:py-32 px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1920px] mx-auto">
       <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-4">
         Contact
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-4">
+      <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-4">
         Let&apos;s work together.
       </h2>
-      <p className="text-gray-500 dark:text-gray-400 leading-relaxed max-w-lg mb-14 text-sm">
+      <p className="text-gray-500 dark:text-gray-400 leading-relaxed max-w-lg 2xl:max-w-2xl mb-14 text-sm 2xl:text-base">
         Open to new roles, freelance, or conversations about full stack
         engineering. Reach me by email or LinkedIn.
       </p>
@@ -15,7 +15,7 @@ const Contact = () => {
       {/* Primary CTA — large email link */}
       <a
         href="mailto:rajayush746@gmail.com"
-        className="group flex items-center justify-between gap-4 w-full max-w-2xl border-y border-gray-200 dark:border-gray-800 py-6 hover:border-gray-400 dark:hover:border-gray-600 transition-colors mb-10"
+        className="group flex items-center justify-between gap-4 w-full max-w-2xl 2xl:max-w-4xl border-y border-gray-200 dark:border-gray-800 py-6 hover:border-gray-400 dark:hover:border-gray-600 transition-colors mb-10"
       >
         <span className="text-xl md:text-2xl font-semibold text-gray-900 dark:text-white group-hover:text-gray-600 dark:group-hover:text-gray-300 transition-colors truncate">
           rajayush746@gmail.com

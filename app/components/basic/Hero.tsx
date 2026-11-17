@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-[calc(100vh-65px)] flex items-center px-6 max-w-6xl mx-auto"
+      className="min-h-[calc(100vh-65px)] flex items-center px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1920px] mx-auto"
     >
       <div className="flex flex-col-reverse md:flex-row items-center gap-14 md:gap-20 w-full py-16">
 
@@ -22,11 +22,11 @@ const Hero = () => {
             </p>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-bold text-gray-900 dark:text-white leading-[1.05] tracking-tight">
             Ayush Raj.
           </h1>
 
-          <p className="text-base md:text-lg text-gray-500 dark:text-gray-400 mt-6 max-w-md leading-relaxed">
+          <p className="text-base md:text-lg 2xl:text-xl text-gray-500 dark:text-gray-400 mt-6 max-w-md 2xl:max-w-xl leading-relaxed">
             Full stack engineer building production platforms with React,
             Node.js, Express, and MongoDB.
           </p>
@@ -59,13 +59,13 @@ const Hero = () => {
           <div className="absolute -top-3 -right-3 w-16 h-16 border-t-2 border-r-2 border-gray-300 dark:border-gray-700 rounded-tr-2xl" />
           <div className="absolute -bottom-3 -left-3 w-16 h-16 border-b-2 border-l-2 border-gray-300 dark:border-gray-700 rounded-bl-2xl" />
 
-          <div className="relative w-64 h-72 md:w-72 md:h-80 rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-gray-800 shadow-2xl">
+          <div className="relative w-64 h-72 md:w-72 md:h-80 2xl:w-80 2xl:h-[22rem] rounded-2xl overflow-hidden border-2 border-gray-200 dark:border-gray-800 shadow-2xl">
             <Image
               src={Profile}
               alt="Ayush Raj"
               fill
               priority
-              sizes="(max-width: 768px) 256px, 288px"
+              sizes="(max-width: 768px) 256px, (min-width: 1536px) 320px, 288px"
               quality={95}
               className="object-cover object-top"
             />

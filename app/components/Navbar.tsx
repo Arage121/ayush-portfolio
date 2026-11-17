@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import ToggleTheme from "./ToggleTheme";
+import GraphicsModeButton, { type GraphicsMode } from "./GraphicsModeButton";
 
 const items = [
   { id: 1, label: "Home", link: "home" },
@@ -12,12 +13,16 @@ const items = [
   { id: 5, label: "Contact", link: "contact" },
 ];
 
-const Navbar = () => {
+const Navbar = ({
+  onModeChange,
+}: {
+  onModeChange: (mode: GraphicsMode) => void;
+}) => {
   const [open, setOpen] = useState(false);
 
   return (
     <nav className="sticky top-0 z-50 bg-[#fafafa]/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 py-4 flex justify-between items-center">
         <span className="uppercase font-bold text-sm tracking-widest">
           Ayush Raj
         </span>
@@ -37,10 +42,14 @@ const Navbar = () => {
           <li>
             <ToggleTheme />
           </li>
+          <li>
+            <GraphicsModeButton mode="basic" onModeChange={onModeChange} />
+          </li>
         </ul>
 
         {/* Mobile controls */}
         <div className="flex md:hidden items-center gap-4">
+          <GraphicsModeButton mode="basic" onModeChange={onModeChange} />
           <ToggleTheme />
           <button
             onClick={() => setOpen((o) => !o)}

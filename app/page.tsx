@@ -1,57 +1,37 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import BasicPage from "./basic/page";
 import AdvancedPage from "./advanced/page";
+import type { GraphicsMode } from "./components/GraphicsModeButton";
 
-export default function page() {
-  const [mode, setMode] = useState<"basic" | "advanced" | null>(null);
+function subscribeToMode(onStoreChange: () => void) {
+  window.addEventListener("storage", onStoreChange);
+  window.addEventListener("portfolio-mode-change", onStoreChange);
 
-  useEffect(() => {
-    const saved = localStorage.getItem("mode") as "basic" | "advanced";
+  return () => {
+    window.removeEventListener("storage", onStoreChange);
+    window.removeEventListener("portfolio-mode-change", onStoreChange);
+  };
+}
 
-    if (saved) {
-      setMode(saved);
-    } else {
-      // Auto detect low-end device
-      const isLowEnd =
-        navigator.hardwareConcurrency <= 4 ||
-        // @ts-ignore
-        navigator.deviceMemory <= 4;
+function getModeSnapshot(): GraphicsMode {
+  return localStorage.getItem("mode") === "basic" ? "basic" : "advanced";
+}
 
-      setMode(isLowEnd ? "basic" : "advanced");
-    }
-  }, []);
+export default function Page() {
+  const mode = useSyncExternalStore(subscribeToMode, getModeSnapshot, () => null);
 
-  const handleSelect = (selected: "basic" | "advanced") => {
+  const handleModeChange = (selected: GraphicsMode) => {
     localStorage.setItem("mode", selected);
-    setMode(selected);
+    window.dispatchEvent(new Event("portfolio-mode-change"));
   };
 
-  if (!mode) {
-    return (
-      <div className="h-screen flex flex-col items-center justify-center gap-6">
-        <h1 className="text-3xl font-bold">Choose Your Experience</h1>
+  if (!mode) return null;
 
-        <div className="flex gap-4">
-          <button
-            onClick={() => handleSelect("basic")}
-            className="px-6 py-3 border rounded-lg"
-          >
-            ⚡ Basic (Fast)
-          </button>
-
-          <button
-            onClick={() => handleSelect("advanced")}
-            className="px-6 py-3 bg-black text-white rounded-lg"
-          >
-            🚀 Advanced (Full Experience)
-          </button>
-        </div>
-      </div>
-    );
+  if (mode === "basic") {
+    return <BasicPage onModeChange={handleModeChange} />;
   }
 
-  if (mode === "basic") return <BasicPage />;
-  return <AdvancedPage />;
+  return <AdvancedPage onModeChange={handleModeChange} />;
 }

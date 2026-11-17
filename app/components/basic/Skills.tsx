@@ -71,11 +71,11 @@ const Skills = () => {
   const isDark = mounted && resolvedTheme === "dark";
 
   return (
-    <section id="skills" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="skills" className="py-24 2xl:py-32 px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1920px] mx-auto">
       <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-4">
         Skills
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-16">
+      <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-16">
         What I work with.
       </h2>
 

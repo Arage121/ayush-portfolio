@@ -81,7 +81,7 @@ const AdvancedHero = () => {
 
           {/* Accent portrait — moved next to name */}
           <div className="hero-portrait self-start md:self-end shrink-0 hidden md:block pb-4">
-            <div className="relative w-24 h-32 md:w-28 md:h-36 rounded-2xl overflow-hidden border border-white/10">
+            <div className="relative w-24 2xl:w-50 2xl:h-50 h-32 md:w-28 md:h-36 rounded-2xl overflow-hidden border border-white/10">
               <Image
                 src={Profile}
                 alt="Ayush Raj"

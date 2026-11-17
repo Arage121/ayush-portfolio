@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-gray-200 dark:border-gray-800 py-10 px-6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <footer className="border-t border-gray-200 dark:border-gray-800 py-10">
+      <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         {/* Left: name + role */}
         <div>
           <p className="text-sm font-semibold text-gray-900 dark:text-white">Ayush Raj</p>

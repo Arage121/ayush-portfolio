@@ -2,6 +2,7 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { gsap } from "gsap";
+import GraphicsModeButton, { type GraphicsMode } from "../GraphicsModeButton";
 
 const links = [
   { label: "Work", href: "#projects" },
@@ -9,7 +10,11 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-const AdvancedNav = () => {
+const AdvancedNav = ({
+  onModeChange,
+}: {
+  onModeChange: (mode: GraphicsMode) => void;
+}) => {
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -29,12 +34,12 @@ const AdvancedNav = () => {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 right-0 z-50 px-8 md:px-16 py-6 flex justify-between items-center"
+      className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 md:px-16 py-6 flex justify-between items-center gap-3"
     >
       <span className="nav-item font-black text-white text-sm tracking-[0.15em] uppercase">
         AR
       </span>
-      <ul className="flex items-center gap-8">
+      <ul className="flex items-center gap-3 sm:gap-6 md:gap-8">
         {links.map(({ label, href }) => (
           <li key={label} className="nav-item">
             <Link
@@ -45,6 +50,9 @@ const AdvancedNav = () => {
             </Link>
           </li>
         ))}
+        <li className="nav-item">
+          <GraphicsModeButton mode="advanced" onModeChange={onModeChange} />
+        </li>
       </ul>
     </nav>
   );

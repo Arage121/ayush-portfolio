@@ -37,11 +37,11 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="projects" className="py-24 2xl:py-32 px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1920px] mx-auto">
       <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-4">
         Projects
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-16">
+      <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-16">
         Things I&apos;ve built.
       </h2>
 
@@ -53,7 +53,7 @@ const Projects = () => {
           >
             {/* ── Code-editor visual header ── */}
             <div
-              className={`relative h-44 bg-linear-to-br ${project.gradient} overflow-hidden`}
+              className={`relative h-44 2xl:h-56 bg-linear-to-br ${project.gradient} overflow-hidden`}
             >
               {/* Subtle grid */}
               <div
@@ -105,10 +105,10 @@ const Projects = () => {
 
             {/* ── Card content ── */}
             <div className="p-7">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+              <h3 className="text-xl 2xl:text-2xl font-bold text-gray-900 dark:text-white mb-3">
                 {project.title}
               </h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+              <p className="text-sm 2xl:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
                 {project.description}
               </p>
               <ul className="space-y-2 mb-6">

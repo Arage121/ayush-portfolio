@@ -41,11 +41,11 @@ const stats = [
 
 const About = () => {
   return (
-    <section id="about" className="py-24 px-6 max-w-6xl mx-auto">
+    <section id="about" className="py-24 2xl:py-32 px-4 sm:px-6 lg:px-8 2xl:px-12 max-w-[1920px] mx-auto">
       <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-[0.2em] mb-4">
         About
       </p>
-      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-12">
+      <h2 className="text-4xl md:text-5xl 2xl:text-6xl font-bold text-gray-900 dark:text-white leading-tight tracking-tight mb-12">
         I build production web products across the full stack.
       </h2>
 
@@ -112,7 +112,7 @@ const About = () => {
 
         {/* Bio + tags + stats */}
         <div className="md:col-span-3 flex flex-col justify-center gap-7">
-          <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 leading-relaxed 2xl:text-lg">
             Full Stack Engineer with 2+ years of experience building production
             web applications using React, Next.js, Node.js, Express, and MongoDB.
             Currently owning frontend and backend delivery for a production
@@ -136,7 +136,7 @@ const About = () => {
                 key={label}
                 className="text-center py-4 px-2 rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-white/5"
               >
-                <p className="text-2xl font-bold text-gray-900 dark:text-white">
+                <p className="text-2xl 2xl:text-3xl font-bold text-gray-900 dark:text-white">
                   {value}
                 </p>
                 <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-1 leading-tight">
@@ -175,7 +175,7 @@ const About = () => {
               {job.points.map((point, i) => (
                 <li
                   key={i}
-                  className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed flex gap-2"
+                  className="text-sm 2xl:text-base text-gray-600 dark:text-gray-400 leading-relaxed flex gap-2"
                 >
                   <span className="text-gray-300 dark:text-gray-700 shrink-0 mt-0.5">›</span>
                   {point}
